@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3alawwal Menu | The First Experience</title>
+    <meta name="description" content="Discover the exclusive 3alawwal menu. A premium selection crafted for excellence.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #d4af37; /* Elegant Gold */
+            --bg: #0a0a0b;
+            --text: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.6);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 0% 0%, rgba(212, 175, 55, 0.03) 0%, transparent 30%),
+                radial-gradient(circle at 100% 100%, rgba(212, 175, 55, 0.03) 0%, transparent 30%);
+        }
+
+        .container {
+            text-align: center;
+            animation: fadeIn 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        h1 {
+            font-size: 5rem;
+            font-weight: 600;
+            letter-spacing: -2px;
+            background: linear-gradient(135deg, #fff 20%, var(--primary) 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+            position: relative;
+            filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.2));
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            .subtitle {
+                font-size: 1rem;
+                letter-spacing: 2px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="glow"></div>
+        <h1>3alawwal</h1>
+        <div class="subtitle">Menu</div>
+    </div>
+
+    <script>
+        // Update URL to /menu without reloading
+        // Note: This works on web servers (http/https). 
+        // Browsers block URL path changes on local 'file://' protocol for security.
+        (function() {
+            try {
+                if (window.location.protocol.startsWith('http')) {
+                    const currentPath = window.location.pathname;
+                    if (currentPath.endsWith('index.html') || currentPath.endsWith('/')) {
+                        window.history.replaceState(null, '', 'menu');
+                    }
+                }
+            } catch (e) {
+                console.warn('URL masking skipped:', e.message);
+            }
+        })();
+    </script>
+</body>
+</html>
